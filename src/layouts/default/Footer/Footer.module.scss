@@ -1,0 +1,64 @@
+@import 'styles/constant/levels';
+@import 'styles/constant/colors';
+@import 'styles/constant/breakpoint';
+
+.footer {
+  padding: 20px;
+  color: $WHITE;
+  background: $BLACK;
+
+  .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    a {
+      margin-left: 40px;
+      color: $WHITE;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        color: $HOVER;
+      }
+
+      &.active {
+        color: $WHITE;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .copy {
+    font-size: 14px;
+    opacity: 0.5;
+  }
+
+  @media (max-width: $MOBILE) {
+    .inner {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    nav {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    nav a,
+    .copy {
+      margin: 10px 0;
+    }
+  }
+}
